@@ -1,14 +1,14 @@
-{
-  "name": "rumble-tournament-bot",
-  "compatibility_date": "2025-04-01",
-  "compatibility_flags": ["nodejs_compat"],
-  "main": "./dist/_worker.js/index.js",
-  "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS"
-  },
-  "observability": {
-    "enabled": true
-  },
-  "upload_source_maps": true
-}
+name = "rumble-tournament-bot"
+main = "src/worker.js"
+compatibility_date = "2025-10-03"
+
+[vars]
+# optional; we’ll add secrets in Cloudflare dashboard, not here
+
+[[kv_namespaces]]
+binding = "TOURNAMENTS"
+id = "<KV_ID_TOURNAMENTS>"   # fill after you create it in dashboard
+
+[[kv_namespaces]]
+binding = "USER_WALLETS"
+id = "<KV_ID_USER_WALLETS>"
